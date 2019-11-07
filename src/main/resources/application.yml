@@ -1,0 +1,24 @@
+spring:
+  profiles.active: default
+
+version: 1.0
+package: jar
+application: githubIssueCollator
+
+---
+
+spring:
+  profiles: default
+
+application:
+  serviceUrl : https://api.github.com/repos
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.bluereligion: DEBUG
+  pattern:
+    console: "[%d{yyyy-MM-dd'T'hh:mm:ss.SSSXXX}][%p][%c{1}][%M][%X{CorrelationId}] || %msg%n"
+  application:
+    name: githubIssueCollator
+
